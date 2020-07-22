@@ -71,8 +71,8 @@ includes_dir = [
 "/usr/local/include",
 "/opt/include",
 os.path.join(ROOT,'include'),
-HOME
-];
+HOME]
+includes_dir.extend(os.environ.get('C_INCLUDE_PATH', '').split(':'))
 
 xml_includes=""
 for dir in includes_dir:
